@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Array</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Categories Name</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">creation Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- code java in html -->
+    <script>
+        //array is object which allowed us store collection of data
+        //array can store mix of data type
+
+        //-----create array------
+        let student = new Array() // array by constructor
+        let teacher = new Array("Reksmey", "Chheya", "Dara")
+        let myStudent = []
+        let myTeacher = ["Mey", "Ya", "Da"]
+
+        console.log('student empty array constructor', student)
+        console.log('student array constructor', teacher)
+        console.log('student empty array literal', myStudent)
+        console.log('student empty array literal', myTeacher)
+
+        console.log(myTeacher[0])
+        console.log(myTeacher[1])
+        console.log(myTeacher[2])
+        console.log(myTeacher[3])
+
+        console.log(myTeacher.length)
+
+        //array 
+        console.clear();
+        const plants = ["broccoli", "cauliflowser", "cabbage", "tamato"]
+        let lastRemoveItem = plants.pop();
+        console.log(plants)
+        plants.unshift("tomato")
+        console.log(plants)
+        plants.push("Mango")
+        console.log(plants)
+
+        //array mix type
+        let arr = [300, "hello world", true]
+
+        //------list of object 
+
+        let categories = [
+            {
+                "id": 1,
+                "name": "Clothess",
+                "image": "https://picsum.photos/640/640?r=1538",
+                "creationAt": "2023-04-26T13:00:12.000Z",
+                "updatedAt": "2023-04-26T22:19:51.000Z"
+            },
+            {
+                "id": 2,
+                "name": "Electronics",
+                "image": "https://picsum.photos/640/640?r=7784",
+                "creationAt": "2023-04-26T13:00:12.000Z",
+                "updatedAt": "2023-04-26T13:00:12.000Z"
+            },
+            {
+                "id": 3,
+                "name": "Change title",
+                "image": "https://placeimg.com/640/480/any",
+                "creationAt": "2023-04-26T13:00:12.000Z",
+                "updatedAt": "2023-04-26T18:25:37.000Z"
+            },
+            {
+                "id": 4,
+                "name": "Shoes",
+                "image": "https://picsum.photos/640/640?r=8806",
+                "creationAt": "2023-04-26T13:00:12.000Z",
+                "updatedAt": "2023-04-26T13:00:12.000Z"
+            },
+            {
+                "id": 5,
+                "name": "Others",
+                "image": "https://picsum.photos/640/640?r=9171",
+                "creationAt": "2023-04-26T13:00:12.000Z",
+                "updatedAt": "2023-04-26T13:00:12.000Z"
+            },
+            {
+                "id": 6,
+                "name": "nueva categoria",
+                "image": "https://placeimg.com/640/480/any",
+                "creationAt": "2023-04-26T15:04:38.000Z",
+                "updatedAt": "2023-04-26T15:04:38.000Z"
+            },
+            {
+                "id": 16,
+                "name": "bb",
+                "image": "https://firebasestorage.googleapis.com/v0/b/nextproject-76ce9.appspot.com/o/files%2Fvalorant.jfif?alt=media&token=0e923dd7-4cf6-440b-b639-dbd2d0ed2381",
+                "creationAt": "2023-04-26T22:34:55.000Z",
+                "updatedAt": "2023-04-26T22:34:55.000Z"
+            },
+            {
+                "id": 19,
+                "name": "gatos crazys",
+                "image": "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "creationAt": "2023-04-26T22:50:37.000Z",
+                "updatedAt": "2023-04-26T22:50:37.000Z"
+            },
+            {
+                "id": 20,
+                "name": "perros locos",
+                "image": "https://images.pexels.com/photos/5122188/pexels-photo-5122188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "creationAt": "2023-04-26T22:52:09.000Z",
+                "updatedAt": "2023-04-26T22:52:09.000Z"
+            }
+        ]
+            //way to copy array
+        let newCotegories = Array.from(categories)
+        let newCotegoriesCopy = [...categories]  //co
+        console.log(newCotegoriesCopy)
+        console.log(categories.length)
+            // render data from categories
+            let mergeCotegories = newCotegories.concat(newCotegoriesCopy)
+            let tbody = document.querySelector("tbody")
+            mergeCotegories.map(cat => tbody.innerHTML += `
+                <tr>
+                    <td>${cat.id}</td>
+                    <td>${cat.name}</td>
+                    <td>
+                        <img src=${cat.image} width="80" />
+                    </td>
+                    <td>${cat.creationAt}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            `)
+
+    </script>
+</body>
+
+</html>

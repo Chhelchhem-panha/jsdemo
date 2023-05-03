@@ -1,0 +1,11 @@
+.text-darkblue {
+    color: darkblue;
+    text-align: center;
+}
+section{
+    width: 500px;
+}
+
+section img {
+    width: 100%;
+}
