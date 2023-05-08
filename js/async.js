@@ -25,7 +25,7 @@ function getAllProducts() {
             </div>
         `))
 }
-// getAllProducts()
+getAllProducts()
 
 let basePath = 'https://image.tmdb.org/t/p/w440_and_h660_face/'
 let movieAPI = 'https://api.themoviedb.org/3/movie/popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=1'
@@ -45,10 +45,10 @@ function getPopularMovies(){
 }
 // getPopularMovies()
 
-const fetchUser = async () => {
-    const resp = await fetch("https://api.escuelajs.co/api/v1/products")
-    return resp.json()
-}
+// const fetchUser = async () => {
+//     const resp = await fetch("https://api.escuelajs.co/api/v1/products")
+//     return resp.json()
+// }
 
-fetchUser()
-.then(resp => console.log(resp))
+// fetchUser()
+// .then(resp => console.log(resp))
